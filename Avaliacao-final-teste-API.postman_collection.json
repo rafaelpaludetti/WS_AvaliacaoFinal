@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "33c3ad57-d800-47f0-829f-19c58b03506b",
+		"name": "Avaliacao-final-teste-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Username\": \"rafael\",\r\n    \"Password\": \"123456\"\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44337/auth/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44337",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InJhZmFlbCIsInJvbGUiOiJNYW5hZ2VyIiwibmJmIjoxNjM3NzIwMTMxLCJleHAiOjE2Mzc3MjczMzEsImlhdCI6MTYzNzcyMDEzMX0.mfgJ1tjS-D27SCVyU0tBkK3As0DGtck-ABq4FTk_klE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InJhZmFlbCIsInJvbGUiOiJNYW5hZ2VyIiwibmJmIjoxNjM3NzE5Mzk2LCJleHAiOjE2Mzc3MjY1OTYsImlhdCI6MTYzNzcxOTM5Nn0.osJe1VwE3JIQUfyi7zmuKC1aF-4YuYI0T-o4UEwycFs",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"NomeProduto\" : \"Galaxy S21\",\r\n    \"Categoria\": \"Smartphone\",\r\n    \"QuantidadeEstoque\": 8,\r\n    \"PrecoVenda\": 3500.00\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44337/products/create",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44337",
+					"path": [
+						"products",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Produtct",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InJhZmFlbCIsInJvbGUiOiJNYW5hZ2VyIiwibmJmIjoxNjM3NzIwMTMxLCJleHAiOjE2Mzc3MjczMzEsImlhdCI6MTYzNzcyMDEzMX0.mfgJ1tjS-D27SCVyU0tBkK3As0DGtck-ABq4FTk_klE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InJhZmFlbCIsInJvbGUiOiJNYW5hZ2VyIiwibmJmIjoxNjM3NzE5Mzk2LCJleHAiOjE2Mzc3MjY1OTYsImlhdCI6MTYzNzcxOTM5Nn0.osJe1VwE3JIQUfyi7zmuKC1aF-4YuYI0T-o4UEwycFs",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"IdProduto\" : \"2\",\r\n    \"NomeProduto\" : \"Galaxy S21\",\r\n    \"Categoria\": \"Smartphone\",\r\n    \"QuantidadeEstoque\": 8,\r\n    \"PrecoVenda\": 3500.00\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44337/products/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44337",
+					"path": [
+						"products",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InJhZmFlbCIsInJvbGUiOiJNYW5hZ2VyIiwibmJmIjoxNjM3NzIwMTMxLCJleHAiOjE2Mzc3MjczMzEsImlhdCI6MTYzNzcyMDEzMX0.mfgJ1tjS-D27SCVyU0tBkK3As0DGtck-ABq4FTk_klE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44337/products/delete/4",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44337",
+					"path": [
+						"products",
+						"delete",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRlc3RlIiwicm9sZSI6Ik5vcm1hbCIsIm5iZiI6MTYzNzcyMDA3MCwiZXhwIjoxNjM3NzI3MjcwLCJpYXQiOjE2Mzc3MjAwNzB9.jPpQz-S8pzYQM8hJ1DAQU8fk_A6cWKW6ijgiD4DQMuA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44337/products/4",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44337",
+					"path": [
+						"products",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InJhZmFlbCIsInJvbGUiOiJNYW5hZ2VyIiwibmJmIjoxNjM3NzIwMTMxLCJleHAiOjE2Mzc3MjczMzEsImlhdCI6MTYzNzcyMDEzMX0.mfgJ1tjS-D27SCVyU0tBkK3As0DGtck-ABq4FTk_klE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44337/products/list",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44337",
+					"path": [
+						"products",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
