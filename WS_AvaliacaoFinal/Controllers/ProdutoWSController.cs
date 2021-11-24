@@ -9,7 +9,7 @@ using WS_AvaliacaoFinal.Models;
 
 namespace WS_AvaliacaoFinal.Controllers
 {
-    [ApiController]
+    [ApiController] 
     [Route("products")]
     public class ProdutoWSController : ControllerBase
     {
